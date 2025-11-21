@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Конструктор дома — VigVag</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="canvas-container"></div>
+
+<form id="builderForm">
+  <h2>3D Конструктор дома</h2>
+
+  <label>Тип дома</label>
+  <select name="type">
+    <option value="karkas">Каркасный</option>
+    <option value="brick">Кирпич</option>
+    <option value="timber">Брус</option>
+  </select>
+
+  <label>Этажи</label>
+  <select name="floors">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+
+  <label>Площадь (м²)</label>
+  <input name="area" type="number" value="120">
+
+  <label>Отделка</label>
+  <select name="finish">
+    <option value="standard">Стандарт</option>
+    <option value="premium">Премиум</option>
+  </select>
+
+  <label class="checkbox"><input type="checkbox" name="garage"> Гараж</label>
+  <label class="checkbox"><input type="checkbox" name="terrace"> Терраса</label>
+
+  <label>Контактное лицо</label>
+  <input name="name" placeholder="ФИО">
+  <input name="phone" placeholder="+7 (___) ___-__-__">
+
+  <label class="checkbox"><input type="checkbox" name="agree"> Я принимаю условия оферты</label>
+
+  <button type="submit" class="btn">Отправить проект</button>
+  <div id="builderStatus"></div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0b0c0e 0%, #202124 100%);
+  color: #eee;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+form#builderForm {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(20,20,20,0.9);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 300px;
+  z-index: 10;
+}
+
+form#builderForm h2 {
+  margin-top: 0;
+  color: #ffcc00;
+}
+
+form#builderForm label {
+  display: block;
+  margin-top: 10px;
+}
+
+form#builderForm input, form#builderForm select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #111;
+  color: #eee;
+}
+
+form#builderForm .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+form#builderForm button.btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ffcc00, #1bb8ff);
+  cursor: pointer;
+  color: #000;
+}
+
+#builderStatus {
+  margin-top: 8px;
+  color: #4df442;
+}
