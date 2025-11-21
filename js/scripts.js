@@ -1,18 +1,23 @@
+// ES Modules import
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
 let scene, camera, renderer, controls;
 
 function init() {
+    // Сцена
     scene = new THREE.Scene();
 
+    // Камера
     camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
     camera.position.set(5,5,5);
 
+    // Рендерер
     renderer = new THREE.WebGLRenderer({antialias:true});
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('container').appendChild(renderer.domElement);
 
+    // Контролы камеры
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
@@ -20,7 +25,6 @@ function init() {
     // Освещение
     const ambient = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambient);
-
     const dirLight = new THREE.DirectionalLight(0xffffff, 1);
     dirLight.position.set(5,10,7.5);
     scene.add(dirLight);
@@ -33,7 +37,7 @@ function init() {
     floor.rotation.x = -Math.PI/2;
     scene.add(floor);
 
-    // Дом (блоки)
+    // Дом (куб)
     const houseGeometry = new THREE.BoxGeometry(2,2,2);
     const houseMaterial = new THREE.MeshStandardMaterial({color:0xffcc00});
     const house = new THREE.Mesh(houseGeometry, houseMaterial);
@@ -57,7 +61,7 @@ window.addEventListener('resize', ()=>{
 
 init();
 
-// Обработка формы
+// Обработка формы конструктора
 const form = document.getElementById('builderForm');
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -73,6 +77,5 @@ form.addEventListener('submit', (e)=>{
     const phone = fd.get('phone');
 
     document.getElementById('builderStatus').textContent = 'Заявка отправлена. Спасибо!';
-
     console.log({type,floors,area,finish,extras,name,phone});
 });
